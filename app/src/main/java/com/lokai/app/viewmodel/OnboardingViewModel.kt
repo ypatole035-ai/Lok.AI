@@ -1,12 +1,11 @@
 package com.lokai.app.viewmodel
 
 import android.app.Application
-import android.content.Context
-import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.lokai.app.KEY_ONBOARDING_DONE
+import com.lokai.app.OnboardingDataStore
 import com.lokai.app.data.device.DeviceDetector
 import com.lokai.app.data.models.ModelCatalog
 import com.lokai.app.model.DeviceProfile
@@ -15,14 +14,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-
-// Shared singleton DataStore accessor — avoids duplicate delegate crash with MainActivity.
-// Both MainActivity and OnboardingViewModel must use this same object.
-internal object OnboardingDataStore {
-    private val Context.store by preferencesDataStore("onboarding")
-    val KEY_DONE = booleanPreferencesKey("onboarding_done")
-    fun of(context: Context) = context.store
-}
 
 data class OnboardingState(
     val isScanning:   Boolean        = true,
@@ -42,8 +33,8 @@ class OnboardingViewModel(application: Application) : AndroidViewModel(applicati
     val state: StateFlow<OnboardingState> = _state.asStateFlow()
 
     val isOnboardingDone: Flow<Boolean> =
-        OnboardingDataStore.of(application).data
-            .map { it[OnboardingDataStore.KEY_DONE] ?: false }
+        OnboardingDataStore.get(application).data
+            .map { it[KEY_ONBOARDING_DONE] ?: false }
             .catch { emit(false) }
 
     init { runScan() }
@@ -67,15 +58,20 @@ class OnboardingViewModel(application: Application) : AndroidViewModel(applicati
             val (compatible, _) = catalog.filterByRam(profile.effectiveRamGb)
             val topModels = compatible.sortedBy { it.minRamGb }.take(3)
             _state.update {
-                it.copy(isScanning = false, scanComplete = true, profile = profile, topModels = topModels)
+                it.copy(
+                    isScanning   = false,
+                    scanComplete = true,
+                    profile      = profile,
+                    topModels    = topModels
+                )
             }
         }
     }
 
     fun markOnboardingDone() {
         viewModelScope.launch {
-            OnboardingDataStore.of(getApplication()).edit { prefs ->
-                prefs[OnboardingDataStore.KEY_DONE] = true
+            OnboardingDataStore.get(getApplication()).edit { prefs ->
+                prefs[KEY_ONBOARDING_DONE] = true
             }
         }
     }
