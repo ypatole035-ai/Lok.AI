@@ -49,38 +49,6 @@ class AgentConverters {
 
     @TypeConverter
     fun toCategory(s: String): AgentCategory = AgentCategory.valueOf(s)
-
-    @TypeConverter
-    fun fromInferenceMode(m: InferenceMode): String = m.name
-
-    @TypeConverter
-    fun toInferenceMode(s: String): InferenceMode = InferenceMode.valueOf(s)
-
-    @TypeConverter
-    fun fromMessages(msgs: List<ChatMessage>): String {
-        val s = msgs.map { m ->
-            SerializableMessage2(
-                id = m.id, role = m.role, content = m.content,
-                thinkingLog = m.thinkingLog.map { SerializableLog2(it.timestampMs, it.message) },
-                thinkingMs = m.thinkingMs, timestampMs = m.timestampMs
-            )
-        }
-        return agentJson.encodeToString(s)
-    }
-
-    @TypeConverter
-    fun toMessages(json: String): List<ChatMessage> {
-        if (json.isBlank()) return emptyList()
-        return try {
-            agentJson.decodeFromString<List<SerializableMessage2>>(json).map { s ->
-                ChatMessage(
-                    id = s.id, role = s.role, content = s.content,
-                    thinkingLog = s.thinkingLog.map { ThinkingLog(it.timestampMs, it.message) },
-                    thinkingMs = s.thinkingMs, timestampMs = s.timestampMs
-                )
-            }
-        } catch (e: Exception) { emptyList() }
-    }
 }
 
 // ─── AgentProfile Entity ──────────────────────────────────────────────────────

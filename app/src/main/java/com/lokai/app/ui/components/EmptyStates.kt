@@ -107,7 +107,7 @@ fun NoSessionsEmpty() = EmptyState(
 @Composable
 fun HFSearchEmpty(query: String) = EmptyState(
     icon  = Icons.Filled.SearchOff,
-    title = "No results for "$query"",
+    title = "No results for /"$query/"",
     body  = "Try a different keyword or search for a model name like \"llama\" or \"qwen\"."
 )
 
