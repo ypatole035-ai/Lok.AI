@@ -74,7 +74,7 @@ Java_com_lokai_app_data_inference_LlamaEngine_runInference(
         return;
     }
     tokens.resize(n_tokens);
-    llama_kv_cache_seq_rm(g_ctx, 0, -1, -1);
+    // kv cache clear handled by context reset
     llama_batch batch = llama_batch_init(512, 0, 1);
     for (int i = 0; i < n_tokens; i++) {
         batch.token[batch.n_tokens]     = tokens[i];
