@@ -329,7 +329,7 @@ private fun ActionRow(label: String, subLabel: String, onClick: () -> Unit) {
             Text(subLabel, color = TextSubtle,  fontSize = 12.sp)
         }
         Icon(
-            imageVector        = androidx.compose.material.icons.Icons.Filled.ChevronRight,
+            imageVector        = androidx.compose.material.icons.Icons.Filled.NavigateNext,
             contentDescription = null,
             tint               = TextSubtle,
             modifier           = Modifier.size(20.dp)

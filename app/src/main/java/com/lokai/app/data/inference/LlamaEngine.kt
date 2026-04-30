@@ -39,7 +39,7 @@ class LlamaEngine {
         callback:    TokenCallback
     )
 
-    private external fun stopInference()
+    internal external fun stopInference()
 
     external fun unloadModel()
 

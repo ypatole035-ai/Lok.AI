@@ -20,7 +20,7 @@ import com.lokai.app.model.DownloadedModel
 import com.lokai.app.model.ThinkingLog
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
-import java.io.ActivityManager
+import android.app.ActivityManager
 
 // ─── UI State ─────────────────────────────────────────────────────────────────
 

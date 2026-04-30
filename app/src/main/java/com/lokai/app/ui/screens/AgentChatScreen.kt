@@ -200,7 +200,7 @@ fun AgentChatScreen(
                             item {
                                 Column {
                                     if (state.streamingLog.isNotEmpty()) {
-                                        ThinkingPanelLive(logs = state.streamingLog)
+                                        ThinkingPanelLive(log = state.streamingLog)
                                         Spacer(Modifier.height(6.dp))
                                     }
                                     if (state.streamingText.isNotBlank()) {

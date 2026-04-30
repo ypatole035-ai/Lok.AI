@@ -65,7 +65,7 @@ Java_com_lokai_app_data_inference_LlamaEngine_runInference(
     g_stop_flag.store(false);
     std::string prompt_str = jstring_to_string(env, prompt);
     std::vector<llama_token> tokens(prompt_str.size() + 64);
-    int n_tokens = llama_tokenize(g_model, prompt_str.c_str(), (int32_t)prompt_str.size(),
+    int n_tokens = llama_tokenize(llama_model_get_vocab(g_model), prompt_str.c_str(), (int32_t)prompt_str.size(),
         tokens.data(), (int32_t)tokens.size(), true, false);
     if (n_tokens < 0) {
         jclass c = env->GetObjectClass(callback);
@@ -74,7 +74,7 @@ Java_com_lokai_app_data_inference_LlamaEngine_runInference(
         return;
     }
     tokens.resize(n_tokens);
-    llama_kv_self_clear(g_ctx);
+    llama_kv_cache_clear(g_ctx);
     llama_batch batch = llama_batch_init(512, 0, 1);
     for (int i = 0; i < n_tokens; i++) {
         batch.token[batch.n_tokens]     = tokens[i];
@@ -139,7 +139,7 @@ Java_com_lokai_app_data_inference_LlamaEngine_unloadModel(JNIEnv* env, jobject) 
 extern "C" JNIEXPORT jint JNICALL
 Java_com_lokai_app_data_inference_LlamaEngine_getContextUsed(JNIEnv* env, jobject) {
     if (!g_ctx) return 0;
-    return (jint)llama_get_kv_cache_used_cells(g_ctx);
+    return (jint)llama_kv_self_used_cells(g_ctx);
 }
 
 extern "C" JNIEXPORT jint JNICALL

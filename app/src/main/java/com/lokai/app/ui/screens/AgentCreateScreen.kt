@@ -87,6 +87,7 @@ fun AgentCreateScreen(
         containerColor = BgPage,
         topBar = {
             @OptIn(ExperimentalMaterial3Api::class)
+@Suppress("OPT_IN_USAGE")
             TopAppBar(
                 title  = { Text("New Agent", color = TextMain, fontWeight = FontWeight.Bold) },
                 navigationIcon = {
@@ -161,7 +162,7 @@ fun AgentCreateScreen(
                             DropdownMenuItem(
                                 text    = { Text(model.name, color = TextMain) },
                                 onClick = {
-                                    vm.onModelChange(model.id, model.name)
+                                    vm.onModelChange(model.modelId, model.name)
                                     expanded = false
                                 }
                             )

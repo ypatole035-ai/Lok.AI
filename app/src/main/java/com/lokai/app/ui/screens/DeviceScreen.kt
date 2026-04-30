@@ -71,7 +71,7 @@ fun DeviceScreen(vm: DeviceViewModel = viewModel()) {
 
                     OutlinedButton(
                         onClick = { vm.refresh() },
-                        colors  = OutlinedButtonDefaults.colors(contentColor = TextSubtle)
+                        colors  = ButtonDefaults.outlinedButtonColors(contentColor = TextSubtle)
                     ) {
                         Text("Refresh hardware scan", fontSize = 13.sp)
                     }
