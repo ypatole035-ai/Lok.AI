@@ -25,23 +25,24 @@ import android.app.ActivityManager
 // ─── UI State ─────────────────────────────────────────────────────────────────
 
 data class ChatUiState(
-    val session:          ChatSession?    = null,
-    val isModelLoaded:    Boolean         = false,
-    val isGenerating:     Boolean         = false,
-    val streamingText:    String          = "",     // in-flight assistant tokens
-    val streamingLog:     List<ThinkingLog> = emptyList(), // live log during generation
-    val inferenceMode:    InferenceMode   = InferenceMode.NORMAL,
-    val loadingModel:     Boolean         = false,
-    val loadError:        String?         = null,
-    val currentModel:     DownloadedModel? = null,
-    val ramMb:            Long            = 0L,
-    val batteryPct:       Int             = 100,
-    val isBatteryLow:     Boolean         = false,
-    val showModeTooltip:  Boolean         = false,
-    val tooltipMode:      InferenceMode?  = null,
-    val showModelPicker:  Boolean         = false,
-    val contextUsed:      Int             = 0,
-    val contextMax:       Int             = 0
+    val session:               ChatSession?    = null,
+    val isModelLoaded:         Boolean         = false,
+    val isGenerating:          Boolean         = false,
+    val streamingText:         String          = "",
+    val streamingLog:          List<ThinkingLog> = emptyList(),
+    val inferenceMode:         InferenceMode   = InferenceMode.NORMAL,
+    val loadingModel:          Boolean         = false,
+    val loadError:             String?         = null,
+    val currentModel:          DownloadedModel? = null,
+    val ramMb:                 Long            = 0L,
+    val batteryPct:            Int             = 100,
+    val isBatteryLow:          Boolean         = false,
+    val showModeTooltip:       Boolean         = false,
+    val tooltipMode:           InferenceMode?  = null,
+    val showModelPicker:       Boolean         = false,
+    val contextUsed:           Int             = 0,
+    val contextMax:            Int             = 0,
+    val nativeLibraryMissing:  Boolean         = false   // true when lokai_jni.so failed to load
 )
 
 class ChatViewModel(application: Application) : AndroidViewModel(application) {
@@ -74,6 +75,10 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     init {
+        // Detect missing native library immediately so the UI can show a helpful error
+        if (!LlamaEngine.isLibraryLoaded) {
+            _uiState.update { it.copy(nativeLibraryMissing = true) }
+        }
         viewModelScope.launch {
             settingsRepo.settings.collect { s ->
                 settings = s

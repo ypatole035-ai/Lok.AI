@@ -19,6 +19,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -114,6 +115,8 @@ fun ChatScreen(
         Box(modifier = Modifier.padding(innerPadding).fillMaxSize()) {
 
             when {
+                state.nativeLibraryMissing -> NativeLibraryMissingError()
+
                 state.loadingModel -> LoadingModelOverlay()
 
                 !state.isModelLoaded && state.currentModel == null -> NoChatModelEmpty(
@@ -676,3 +679,42 @@ private fun ModelPickerRow(model: DownloadedModel, onClick: () -> Unit) {
 // Provide LocalTextStyle for input field
 @Composable
 private fun LocalTextStyle() = androidx.compose.material3.LocalTextStyle
+
+@Composable
+private fun NativeLibraryMissingError() {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(BgPage),
+        contentAlignment = Alignment.Center
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.padding(32.dp)
+        ) {
+            Icon(
+                imageVector        = Icons.Filled.Warning,
+                contentDescription = null,
+                tint               = Color(0xFFEF9A9A),
+                modifier           = Modifier.size(48.dp)
+            )
+            Spacer(Modifier.height(16.dp))
+            Text(
+                text       = "Inference engine unavailable",
+                color      = Color(0xFFE0E0E0),
+                fontSize   = 18.sp,
+                fontWeight = FontWeight.Bold,
+                textAlign  = TextAlign.Center
+            )
+            Spacer(Modifier.height(8.dp))
+            Text(
+                text      = "The native library (lokai_jni) could not be loaded. " +
+                            "This APK was likely built without the llama.cpp submodule. " +
+                            "Rebuild with: git submodule update --init --recursive",
+                color     = Color(0xFF666666),
+                fontSize  = 13.sp,
+                textAlign = TextAlign.Center
+            )
+        }
+    }
+}

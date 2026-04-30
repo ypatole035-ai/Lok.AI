@@ -59,6 +59,10 @@ class LlamaEngine {
         threads:     Int = Runtime.getRuntime().availableProcessors().coerceAtMost(8),
         contextSize: Int = 2048
     ): Boolean {
+        if (!isLibraryLoaded) {
+            Log.e(TAG, "Cannot load model — native library failed to load")
+            return false
+        }
         Log.i(TAG, "loadModel: path=$modelPath threads=$threads ctx=$contextSize")
         return loadModel(
             modelPath   = modelPath,
@@ -85,6 +89,11 @@ class LlamaEngine {
         temperature: Float = 0.7f,
         mode:        InferenceMode = InferenceMode.NORMAL
     ): Flow<String> = callbackFlow {
+
+        if (!isLibraryLoaded) {
+            close(InferenceException("Native inference library is not available on this device"))
+            return@callbackFlow
+        }
 
         val (effectiveTemp, effectiveMax, effectivePrompt) = applyMode(
             prompt, maxTokens, temperature, mode
@@ -158,15 +167,17 @@ class LlamaEngine {
         }
     }
 
-    var isLibraryLoaded = false
-        private set
-
     companion object {
+        var isLibraryLoaded = false
+            private set
+
         init {
             try {
                 System.loadLibrary("lokai_jni")
+                isLibraryLoaded = true
             } catch (e: UnsatisfiedLinkError) {
                 android.util.Log.e("LlamaEngine", "Failed to load native library: ${e.message}")
+                isLibraryLoaded = false
             }
         }
     }
