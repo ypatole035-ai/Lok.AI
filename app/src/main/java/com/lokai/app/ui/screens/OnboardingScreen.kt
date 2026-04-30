@@ -29,11 +29,11 @@ import com.lokai.app.model.ModelEntry
 import com.lokai.app.viewmodel.OnboardingViewModel
 import kotlinx.coroutines.delay
 
-private val Amber   = Color(0xFFF5A623)
-private val Bg      = Color(0xFF0D0D0D)
-private val Surface = Color(0xFF1A1A1A)
-private val Subtle  = Color(0xFF555555)
-private val OnSurf  = Color(0xFFE0E0E0)
+private val Amber    = Color(0xFFF5A623)
+private val Bg       = Color(0xFF0D0D0D)
+private val SurfaceC = Color(0xFF1A1A1A)
+private val Subtle   = Color(0xFF555555)
+private val OnSurf   = Color(0xFFE0E0E0)
 
 // ─── Entry point ──────────────────────────────────────────────────────────────
 
@@ -156,7 +156,7 @@ private fun ScanPage(
                 .height(4.dp)
                 .clip(RoundedCornerShape(2.dp)),
             color          = Amber,
-            trackColor     = Surface
+            trackColor     = SurfaceC
         )
 
         Spacer(Modifier.height(16.dp))
@@ -236,7 +236,7 @@ private fun ProfilePage(
         // Stats grid
         if (profile != null) {
             Surface(
-                color  = Surface,
+                color  = SurfaceC,
                 shape  = RoundedCornerShape(16.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
@@ -321,7 +321,7 @@ private fun ModelsPage(
             Box(
                 Modifier
                     .fillMaxWidth()
-                    .background(Surface, RoundedCornerShape(16.dp))
+                    .background(SurfaceC, RoundedCornerShape(16.dp))
                     .padding(24.dp),
                 contentAlignment = Alignment.Center
             ) {
@@ -362,7 +362,7 @@ private fun OnboardingModelCard(model: ModelEntry) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Surface, RoundedCornerShape(12.dp))
+            .background(SurfaceC, RoundedCornerShape(12.dp))
             .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
