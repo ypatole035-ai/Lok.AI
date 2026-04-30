@@ -49,6 +49,28 @@ class AgentConverters {
 
     @TypeConverter
     fun toCategory(s: String): AgentCategory = AgentCategory.valueOf(s)
+
+    @TypeConverter
+    fun fromChatMessages(messages: List<ChatMessage>): String {
+        val serializable = messages.map { msg ->
+            SerializableMessage2(id = msg.id, role = msg.role, content = msg.content,
+                thinkingLog = msg.thinkingLog.map { l -> SerializableLog2(l.timestampMs, l.message) },
+                thinkingMs = msg.thinkingMs, timestampMs = msg.timestampMs)
+        }
+        return agentJson.encodeToString(serializable)
+    }
+
+    @TypeConverter
+    fun toChatMessages(jsonString: String): List<ChatMessage> {
+        if (jsonString.isBlank()) return emptyList()
+        return try {
+            agentJson.decodeFromString<List<SerializableMessage2>>(jsonString).map { s ->
+                ChatMessage(id = s.id, role = s.role, content = s.content,
+                    thinkingLog = s.thinkingLog.map { l -> ThinkingLog(l.timestampMs, l.message) },
+                    thinkingMs = s.thinkingMs, timestampMs = s.timestampMs)
+            }
+        } catch (e: Exception) { emptyList() }
+    }
 }
 
 // ─── AgentProfile Entity ──────────────────────────────────────────────────────
