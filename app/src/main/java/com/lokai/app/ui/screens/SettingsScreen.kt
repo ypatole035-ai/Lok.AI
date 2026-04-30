@@ -18,6 +18,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.lokai.app.data.inference.InferenceMode
 import com.lokai.app.viewmodel.SettingsViewModel
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.KeyboardArrowRight
 import kotlin.math.roundToInt
 
 private val BgPage     = Color(0xFF0D0D0D)
