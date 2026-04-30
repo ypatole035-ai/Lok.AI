@@ -27,6 +27,10 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: latest
+        with:
+          cmdline-tools-version: latest
 
       - name: Install NDK and CMake
         run: |
@@ -62,6 +66,10 @@ jobs:
         run: ./gradlew assembleDebug --no-daemon --max-workers=2
         env:
           GRADLE_OPTS: "-Xmx4g"
+          ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/27.0.12077973
+          ANDROID_NDK: /usr/local/lib/android/sdk/ndk/27.0.12077973
+          ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/27.0.12077973
+          ANDROID_NDK: /usr/local/lib/android/sdk/ndk/27.0.12077973
           ANDROID_NDK_HOME: ${{ env.ANDROID_NDK_HOME }}
 
       - name: Upload debug APK
