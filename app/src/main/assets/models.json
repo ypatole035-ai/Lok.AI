@@ -1,0 +1,679 @@
+{
+  "version": 1,
+  "models": [
+    {
+      "id": "llama-3.2-1b-instruct",
+      "name": "Llama 3.2 1B Instruct",
+      "family": "Meta",
+      "params": "1B",
+      "bestFor": "Lightweight chat, quick Q&A on low-RAM devices",
+      "minRamGb": 1.2,
+      "recommendedRamGb": 1.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~35 tok/s on Snapdragon 888",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 0.77, "ramRequiredGb": 1.2,  "downloadUrl": "https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF/resolve/main/Llama-3.2-1B-Instruct-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 0.90, "ramRequiredGb": 1.4,  "downloadUrl": "https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF/resolve/main/Llama-3.2-1B-Instruct-Q5_K_M.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 0.52, "ramRequiredGb": 0.9,  "downloadUrl": "https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF/resolve/main/Llama-3.2-1B-Instruct-Q2_K.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "llama-3.2-3b-instruct",
+      "name": "Llama 3.2 3B Instruct",
+      "family": "Meta",
+      "params": "3B",
+      "bestFor": "General chat, summaries, instructions on budget devices",
+      "minRamGb": 2.2,
+      "recommendedRamGb": 2.8,
+      "thinkingTrained": false,
+      "benchmarkNote": "~22 tok/s on Snapdragon 888",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 1.93, "ramRequiredGb": 2.4,  "downloadUrl": "https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-GGUF/resolve/main/Llama-3.2-3B-Instruct-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 2.27, "ramRequiredGb": 2.8,  "downloadUrl": "https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-GGUF/resolve/main/Llama-3.2-3B-Instruct-Q5_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 1.60, "ramRequiredGb": 2.0,  "downloadUrl": "https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-GGUF/resolve/main/Llama-3.2-3B-Instruct-Q3_K_M.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 1.27, "ramRequiredGb": 1.6,  "downloadUrl": "https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-GGUF/resolve/main/Llama-3.2-3B-Instruct-Q2_K.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "llama-3.1-8b-instruct",
+      "name": "Llama 3.1 8B Instruct",
+      "family": "Meta",
+      "params": "8B",
+      "bestFor": "Versatile assistant: coding, writing, analysis",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 6.0,
+      "thinkingTrained": false,
+      "benchmarkNote": "~12 tok/s on Snapdragon 8 Gen 2",
+      "variants": [
+        { "quant": "Q5_K_M", "sizeGb": 5.73, "ramRequiredGb": 6.5,  "downloadUrl": "https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q5_K_M.gguf", "sha256": "" },
+        { "quant": "Q4_K_M", "sizeGb": 4.92, "ramRequiredGb": 5.5,  "downloadUrl": "https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 3.74, "ramRequiredGb": 4.4,  "downloadUrl": "https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q3_K_M.gguf", "sha256": "" },
+        { "quant": "IQ2_M",  "sizeGb": 2.80, "ramRequiredGb": 3.4,  "downloadUrl": "https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-IQ2_M.gguf",  "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 2.53, "ramRequiredGb": 3.0,  "downloadUrl": "https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q2_K.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "llama-3.3-70b-instruct",
+      "name": "Llama 3.3 70B Instruct",
+      "family": "Meta",
+      "params": "70B",
+      "bestFor": "Frontier-level reasoning on high-RAM devices",
+      "minRamGb": 24.0,
+      "recommendedRamGb": 40.0,
+      "thinkingTrained": false,
+      "benchmarkNote": "~2 tok/s on 32GB device",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 42.5, "ramRequiredGb": 44.0, "downloadUrl": "https://huggingface.co/bartowski/Llama-3.3-70B-Instruct-GGUF/resolve/main/Llama-3.3-70B-Instruct-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 26.4, "ramRequiredGb": 28.0, "downloadUrl": "https://huggingface.co/bartowski/Llama-3.3-70B-Instruct-GGUF/resolve/main/Llama-3.3-70B-Instruct-Q2_K.gguf",   "sha256": "" },
+        { "quant": "IQ2_M",  "sizeGb": 23.6, "ramRequiredGb": 25.0, "downloadUrl": "https://huggingface.co/bartowski/Llama-3.3-70B-Instruct-GGUF/resolve/main/Llama-3.3-70B-Instruct-IQ2_M.gguf",  "sha256": "" }
+      ]
+    },
+    {
+      "id": "qwen2.5-0.5b-instruct",
+      "name": "Qwen 2.5 0.5B Instruct",
+      "family": "Alibaba",
+      "params": "0.5B",
+      "bestFor": "Ultra-low RAM devices, simple tasks",
+      "minRamGb": 0.7,
+      "recommendedRamGb": 0.9,
+      "thinkingTrained": false,
+      "benchmarkNote": "~55 tok/s on most devices",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 0.40, "ramRequiredGb": 0.7,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 0.48, "ramRequiredGb": 0.8,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q5_k_m.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "qwen2.5-1.5b-instruct",
+      "name": "Qwen 2.5 1.5B Instruct",
+      "family": "Alibaba",
+      "params": "1.5B",
+      "bestFor": "Budget phones — coding, chat, translation",
+      "minRamGb": 1.2,
+      "recommendedRamGb": 1.6,
+      "thinkingTrained": false,
+      "benchmarkNote": "~30 tok/s on Snapdragon 855",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 0.99, "ramRequiredGb": 1.3,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q4_k_m.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 1.18, "ramRequiredGb": 1.5,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q5_k_m.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "qwen2.5-3b-instruct",
+      "name": "Qwen 2.5 3B Instruct",
+      "family": "Alibaba",
+      "params": "3B",
+      "bestFor": "Mid-tier balance of speed and capability",
+      "minRamGb": 2.2,
+      "recommendedRamGb": 2.8,
+      "thinkingTrained": false,
+      "benchmarkNote": "~20 tok/s on Snapdragon 778G",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 1.94, "ramRequiredGb": 2.4,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/resolve/main/qwen2.5-3b-instruct-q4_k_m.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 2.27, "ramRequiredGb": 2.8,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/resolve/main/qwen2.5-3b-instruct-q5_k_m.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 1.28, "ramRequiredGb": 1.7,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/resolve/main/qwen2.5-3b-instruct-q2_k.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "qwen2.5-7b-instruct",
+      "name": "Qwen 2.5 7B Instruct",
+      "family": "Alibaba",
+      "params": "7B",
+      "bestFor": "Strong multilingual, coding, math on mid-range",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~11 tok/s on Snapdragon 8 Gen 2",
+      "variants": [
+        { "quant": "Q5_K_M", "sizeGb": 5.16, "ramRequiredGb": 6.0,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/main/qwen2.5-7b-instruct-q5_k_m.gguf", "sha256": "" },
+        { "quant": "Q4_K_M", "sizeGb": 4.44, "ramRequiredGb": 5.2,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/main/qwen2.5-7b-instruct-q4_k_m.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 3.34, "ramRequiredGb": 4.0,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/main/qwen2.5-7b-instruct-q3_k_m.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 2.31, "ramRequiredGb": 2.9,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/main/qwen2.5-7b-instruct-q2_k.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "qwen2.5-14b-instruct",
+      "name": "Qwen 2.5 14B Instruct",
+      "family": "Alibaba",
+      "params": "14B",
+      "bestFor": "Best mid-size model — coding, reasoning, multilingual",
+      "minRamGb": 9.0,
+      "recommendedRamGb": 11.0,
+      "thinkingTrained": false,
+      "benchmarkNote": "~6 tok/s on 12GB device",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 8.99, "ramRequiredGb": 10.5, "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GGUF/resolve/main/qwen2.5-14b-instruct-q4_k_m.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 6.83, "ramRequiredGb": 8.2,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GGUF/resolve/main/qwen2.5-14b-instruct-q3_k_m.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 5.17, "ramRequiredGb": 6.2,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GGUF/resolve/main/qwen2.5-14b-instruct-q2_k.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "qwen2.5-coder-1.5b",
+      "name": "Qwen 2.5 Coder 1.5B",
+      "family": "Alibaba",
+      "params": "1.5B",
+      "bestFor": "Code generation and completion on low-RAM devices",
+      "minRamGb": 1.2,
+      "recommendedRamGb": 1.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~30 tok/s on Snapdragon 855",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 0.99, "ramRequiredGb": 1.3,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/resolve/main/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 1.18, "ramRequiredGb": 1.5,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/resolve/main/qwen2.5-coder-1.5b-instruct-q5_k_m.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "qwen2.5-coder-7b",
+      "name": "Qwen 2.5 Coder 7B",
+      "family": "Alibaba",
+      "params": "7B",
+      "bestFor": "Advanced code generation, debugging, refactoring",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~11 tok/s on Snapdragon 8 Gen 2",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.44, "ramRequiredGb": 5.2,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/resolve/main/qwen2.5-coder-7b-instruct-q4_k_m.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 3.34, "ramRequiredGb": 4.0,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/resolve/main/qwen2.5-coder-7b-instruct-q3_k_m.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 2.31, "ramRequiredGb": 2.9,  "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/resolve/main/qwen2.5-coder-7b-instruct-q2_k.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "deepseek-r1-distill-qwen-1.5b",
+      "name": "DeepSeek R1 Distill Qwen 1.5B",
+      "family": "DeepSeek",
+      "params": "1.5B",
+      "bestFor": "Thinking/reasoning on very low-RAM devices",
+      "minRamGb": 1.3,
+      "recommendedRamGb": 1.6,
+      "thinkingTrained": true,
+      "benchmarkNote": "~28 tok/s on Snapdragon 888",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 1.04, "ramRequiredGb": 1.4,  "downloadUrl": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-1.5B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 1.22, "ramRequiredGb": 1.6,  "downloadUrl": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-1.5B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-1.5B-Q5_K_M.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 0.71, "ramRequiredGb": 1.0,  "downloadUrl": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-1.5B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-1.5B-Q2_K.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "deepseek-r1-distill-qwen-7b",
+      "name": "DeepSeek R1 Distill Qwen 7B",
+      "family": "DeepSeek",
+      "params": "7B",
+      "bestFor": "Reasoning, math, logic on mid-range phones",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": true,
+      "benchmarkNote": "~10 tok/s on Snapdragon 8 Gen 2",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.68, "ramRequiredGb": 5.3,  "downloadUrl": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-7B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 3.52, "ramRequiredGb": 4.2,  "downloadUrl": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-7B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-7B-Q3_K_M.gguf", "sha256": "" },
+        { "quant": "IQ2_M",  "sizeGb": 2.68, "ramRequiredGb": 3.3,  "downloadUrl": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-7B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-7B-IQ2_M.gguf",  "sha256": "" }
+      ]
+    },
+    {
+      "id": "deepseek-r1-distill-llama-8b",
+      "name": "DeepSeek R1 Distill Llama 8B",
+      "family": "DeepSeek",
+      "params": "8B",
+      "bestFor": "Reasoning + coding on flagship phones",
+      "minRamGb": 5.0,
+      "recommendedRamGb": 6.5,
+      "thinkingTrained": true,
+      "benchmarkNote": "~9 tok/s on Snapdragon 8 Gen 3",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.92, "ramRequiredGb": 5.8,  "downloadUrl": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Llama-8B-GGUF/resolve/main/DeepSeek-R1-Distill-Llama-8B-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 3.74, "ramRequiredGb": 4.5,  "downloadUrl": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Llama-8B-GGUF/resolve/main/DeepSeek-R1-Distill-Llama-8B-Q3_K_M.gguf", "sha256": "" },
+        { "quant": "IQ2_M",  "sizeGb": 2.83, "ramRequiredGb": 3.5,  "downloadUrl": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Llama-8B-GGUF/resolve/main/DeepSeek-R1-Distill-Llama-8B-IQ2_M.gguf",  "sha256": "" }
+      ]
+    },
+    {
+      "id": "deepseek-r1-distill-qwen-14b",
+      "name": "DeepSeek R1 Distill Qwen 14B",
+      "family": "DeepSeek",
+      "params": "14B",
+      "bestFor": "Deep reasoning on desktop/high-RAM devices",
+      "minRamGb": 9.0,
+      "recommendedRamGb": 11.0,
+      "thinkingTrained": true,
+      "benchmarkNote": "~5 tok/s on 12GB device",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 8.99, "ramRequiredGb": 10.5, "downloadUrl": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-14B-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 6.83, "ramRequiredGb": 8.2,  "downloadUrl": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-14B-Q3_K_M.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 5.17, "ramRequiredGb": 6.2,  "downloadUrl": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-14B-Q2_K.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "qwq-32b",
+      "name": "QwQ 32B",
+      "family": "Alibaba",
+      "params": "32B",
+      "bestFor": "Best open reasoning model — math, science, logic",
+      "minRamGb": 16.0,
+      "recommendedRamGb": 22.0,
+      "thinkingTrained": true,
+      "benchmarkNote": "~3 tok/s on 24GB device",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 19.85, "ramRequiredGb": 22.0, "downloadUrl": "https://huggingface.co/bartowski/QwQ-32B-GGUF/resolve/main/QwQ-32B-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 15.20, "ramRequiredGb": 17.0, "downloadUrl": "https://huggingface.co/bartowski/QwQ-32B-GGUF/resolve/main/QwQ-32B-Q3_K_M.gguf", "sha256": "" },
+        { "quant": "IQ2_M",  "sizeGb": 11.80, "ramRequiredGb": 13.5, "downloadUrl": "https://huggingface.co/bartowski/QwQ-32B-GGUF/resolve/main/QwQ-32B-IQ2_M.gguf",  "sha256": "" }
+      ]
+    },
+    {
+      "id": "phi-3.5-mini-instruct",
+      "name": "Phi 3.5 Mini Instruct",
+      "family": "Microsoft",
+      "params": "3.8B",
+      "bestFor": "Compact and capable — coding, math, multilingual",
+      "minRamGb": 2.5,
+      "recommendedRamGb": 3.2,
+      "thinkingTrained": false,
+      "benchmarkNote": "~20 tok/s on Snapdragon 778G",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 2.18, "ramRequiredGb": 2.7,  "downloadUrl": "https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF/resolve/main/Phi-3.5-mini-instruct-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 2.60, "ramRequiredGb": 3.1,  "downloadUrl": "https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF/resolve/main/Phi-3.5-mini-instruct-Q5_K_M.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 1.43, "ramRequiredGb": 1.9,  "downloadUrl": "https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF/resolve/main/Phi-3.5-mini-instruct-Q2_K.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "phi-4",
+      "name": "Phi 4",
+      "family": "Microsoft",
+      "params": "14B",
+      "bestFor": "Best-in-class for 14B — STEM, reasoning, accuracy",
+      "minRamGb": 9.0,
+      "recommendedRamGb": 11.0,
+      "thinkingTrained": false,
+      "benchmarkNote": "~5 tok/s on 12GB device",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 8.43, "ramRequiredGb": 10.0, "downloadUrl": "https://huggingface.co/bartowski/phi-4-GGUF/resolve/main/phi-4-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 6.44, "ramRequiredGb": 7.8,  "downloadUrl": "https://huggingface.co/bartowski/phi-4-GGUF/resolve/main/phi-4-Q3_K_M.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 4.98, "ramRequiredGb": 6.0,  "downloadUrl": "https://huggingface.co/bartowski/phi-4-GGUF/resolve/main/phi-4-Q2_K.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "gemma-2-2b-instruct",
+      "name": "Gemma 2 2B Instruct",
+      "family": "Google",
+      "params": "2B",
+      "bestFor": "Surprisingly capable 2B — chat, summaries",
+      "minRamGb": 1.8,
+      "recommendedRamGb": 2.2,
+      "thinkingTrained": false,
+      "benchmarkNote": "~25 tok/s on Snapdragon 888",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 1.58, "ramRequiredGb": 2.0,  "downloadUrl": "https://huggingface.co/bartowski/gemma-2-2b-it-GGUF/resolve/main/gemma-2-2b-it-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 1.88, "ramRequiredGb": 2.3,  "downloadUrl": "https://huggingface.co/bartowski/gemma-2-2b-it-GGUF/resolve/main/gemma-2-2b-it-Q5_K_M.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 1.08, "ramRequiredGb": 1.5,  "downloadUrl": "https://huggingface.co/bartowski/gemma-2-2b-it-GGUF/resolve/main/gemma-2-2b-it-Q2_K.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "gemma-2-9b-instruct",
+      "name": "Gemma 2 9B Instruct",
+      "family": "Google",
+      "params": "9B",
+      "bestFor": "Efficient 9B — strong multilingual, coding",
+      "minRamGb": 5.5,
+      "recommendedRamGb": 7.0,
+      "thinkingTrained": false,
+      "benchmarkNote": "~9 tok/s on Snapdragon 8 Gen 2",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 5.44, "ramRequiredGb": 6.5,  "downloadUrl": "https://huggingface.co/bartowski/gemma-2-9b-it-GGUF/resolve/main/gemma-2-9b-it-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 4.14, "ramRequiredGb": 5.0,  "downloadUrl": "https://huggingface.co/bartowski/gemma-2-9b-it-GGUF/resolve/main/gemma-2-9b-it-Q3_K_M.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 3.08, "ramRequiredGb": 3.8,  "downloadUrl": "https://huggingface.co/bartowski/gemma-2-9b-it-GGUF/resolve/main/gemma-2-9b-it-Q2_K.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "mistral-7b-instruct-v0.3",
+      "name": "Mistral 7B Instruct v0.3",
+      "family": "Mistral",
+      "params": "7B",
+      "bestFor": "Fast, reliable all-rounder — chat, writing, tasks",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~12 tok/s on Snapdragon 8 Gen 1",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.37, "ramRequiredGb": 5.1,  "downloadUrl": "https://huggingface.co/bartowski/Mistral-7B-Instruct-v0.3-GGUF/resolve/main/Mistral-7B-Instruct-v0.3-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 5.13, "ramRequiredGb": 5.9,  "downloadUrl": "https://huggingface.co/bartowski/Mistral-7B-Instruct-v0.3-GGUF/resolve/main/Mistral-7B-Instruct-v0.3-Q5_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 3.30, "ramRequiredGb": 3.9,  "downloadUrl": "https://huggingface.co/bartowski/Mistral-7B-Instruct-v0.3-GGUF/resolve/main/Mistral-7B-Instruct-v0.3-Q3_K_M.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 2.72, "ramRequiredGb": 3.2,  "downloadUrl": "https://huggingface.co/bartowski/Mistral-7B-Instruct-v0.3-GGUF/resolve/main/Mistral-7B-Instruct-v0.3-Q2_K.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "mistral-nemo-12b",
+      "name": "Mistral NeMo 12B",
+      "family": "Mistral",
+      "params": "12B",
+      "bestFor": "Efficient 12B — long context, instruction following",
+      "minRamGb": 7.5,
+      "recommendedRamGb": 9.0,
+      "thinkingTrained": false,
+      "benchmarkNote": "~7 tok/s on 12GB device",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 7.18, "ramRequiredGb": 8.5,  "downloadUrl": "https://huggingface.co/bartowski/Mistral-Nemo-Instruct-2407-GGUF/resolve/main/Mistral-Nemo-Instruct-2407-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 5.45, "ramRequiredGb": 6.5,  "downloadUrl": "https://huggingface.co/bartowski/Mistral-Nemo-Instruct-2407-GGUF/resolve/main/Mistral-Nemo-Instruct-2407-Q3_K_M.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 4.08, "ramRequiredGb": 5.0,  "downloadUrl": "https://huggingface.co/bartowski/Mistral-Nemo-Instruct-2407-GGUF/resolve/main/Mistral-Nemo-Instruct-2407-Q2_K.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "smollm2-1.7b-instruct",
+      "name": "SmolLM2 1.7B Instruct",
+      "family": "HuggingFace",
+      "params": "1.7B",
+      "bestFor": "Very small — summarization, classification tasks",
+      "minRamGb": 1.2,
+      "recommendedRamGb": 1.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~32 tok/s on most devices",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 1.00, "ramRequiredGb": 1.3,  "downloadUrl": "https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF/resolve/main/smollm2-1.7b-instruct-q4_k_m.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 1.17, "ramRequiredGb": 1.5,  "downloadUrl": "https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF/resolve/main/smollm2-1.7b-instruct-q5_k_m.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "stablelm-2-1.6b-chat",
+      "name": "StableLM 2 1.6B Chat",
+      "family": "Stability AI",
+      "params": "1.6B",
+      "bestFor": "Creative writing and chat on tiny devices",
+      "minRamGb": 1.2,
+      "recommendedRamGb": 1.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~34 tok/s on Snapdragon 855",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 0.98, "ramRequiredGb": 1.3,  "downloadUrl": "https://huggingface.co/stabilityai/stablelm-2-1_6b-chat-GGUF/resolve/main/stablelm-2-1_6b-chat-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 1.15, "ramRequiredGb": 1.5,  "downloadUrl": "https://huggingface.co/stabilityai/stablelm-2-1_6b-chat-GGUF/resolve/main/stablelm-2-1_6b-chat-Q5_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "stablelm-zephyr-3b",
+      "name": "StableLM Zephyr 3B",
+      "family": "Stability AI",
+      "params": "3B",
+      "bestFor": "Instruction following and chat, 3B sweet spot",
+      "minRamGb": 2.2,
+      "recommendedRamGb": 2.7,
+      "thinkingTrained": false,
+      "benchmarkNote": "~22 tok/s on Snapdragon 778G",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 1.87, "ramRequiredGb": 2.4,  "downloadUrl": "https://huggingface.co/stabilityai/stablelm-zephyr-3b-GGUF/resolve/main/stablelm-zephyr-3b-q4_k_m.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 2.22, "ramRequiredGb": 2.8,  "downloadUrl": "https://huggingface.co/stabilityai/stablelm-zephyr-3b-GGUF/resolve/main/stablelm-zephyr-3b-q5_k_m.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "openhermes-2.5-mistral-7b",
+      "name": "OpenHermes 2.5 Mistral 7B",
+      "family": "NousResearch",
+      "params": "7B",
+      "bestFor": "Best Mistral 7B finetune — instruction following",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~12 tok/s on Snapdragon 8 Gen 1",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.37, "ramRequiredGb": 5.1,  "downloadUrl": "https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF/resolve/main/openhermes-2.5-mistral-7b.Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 5.13, "ramRequiredGb": 5.9,  "downloadUrl": "https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF/resolve/main/openhermes-2.5-mistral-7b.Q5_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 3.30, "ramRequiredGb": 3.9,  "downloadUrl": "https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF/resolve/main/openhermes-2.5-mistral-7b.Q3_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "neural-chat-7b-v3.3",
+      "name": "Neural Chat 7B v3.3",
+      "family": "Intel",
+      "params": "7B",
+      "bestFor": "Conversational assistant — optimised for dialogue",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~11 tok/s on Snapdragon 8 Gen 1",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.37, "ramRequiredGb": 5.1,  "downloadUrl": "https://huggingface.co/TheBloke/neural-chat-7B-v3-3-GGUF/resolve/main/neural-chat-7b-v3-3.Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 5.13, "ramRequiredGb": 5.9,  "downloadUrl": "https://huggingface.co/TheBloke/neural-chat-7B-v3-3-GGUF/resolve/main/neural-chat-7b-v3-3.Q5_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "orca-2-7b",
+      "name": "Orca 2 7B",
+      "family": "Microsoft",
+      "params": "7B",
+      "bestFor": "Step-by-step reasoning, education, problem solving",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~11 tok/s on Snapdragon 8 Gen 1",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.08, "ramRequiredGb": 5.0,  "downloadUrl": "https://huggingface.co/TheBloke/Orca-2-7B-GGUF/resolve/main/orca-2-7b.Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 4.78, "ramRequiredGb": 5.6,  "downloadUrl": "https://huggingface.co/TheBloke/Orca-2-7B-GGUF/resolve/main/orca-2-7b.Q5_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "orca-2-13b",
+      "name": "Orca 2 13B",
+      "family": "Microsoft",
+      "params": "13B",
+      "bestFor": "Strong reasoning and education on desktop devices",
+      "minRamGb": 8.0,
+      "recommendedRamGb": 10.0,
+      "thinkingTrained": false,
+      "benchmarkNote": "~5 tok/s on 12GB device",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 7.87, "ramRequiredGb": 9.3,  "downloadUrl": "https://huggingface.co/TheBloke/Orca-2-13B-GGUF/resolve/main/orca-2-13b.Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 5.97, "ramRequiredGb": 7.2,  "downloadUrl": "https://huggingface.co/TheBloke/Orca-2-13B-GGUF/resolve/main/orca-2-13b.Q3_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "codellama-7b-instruct",
+      "name": "CodeLlama 7B Instruct",
+      "family": "Meta",
+      "params": "7B",
+      "bestFor": "Code generation, completion, debugging",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~12 tok/s on Snapdragon 8 Gen 1",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.24, "ramRequiredGb": 5.0,  "downloadUrl": "https://huggingface.co/TheBloke/CodeLlama-7B-Instruct-GGUF/resolve/main/codellama-7b-instruct.Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 4.97, "ramRequiredGb": 5.7,  "downloadUrl": "https://huggingface.co/TheBloke/CodeLlama-7B-Instruct-GGUF/resolve/main/codellama-7b-instruct.Q5_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 3.22, "ramRequiredGb": 3.9,  "downloadUrl": "https://huggingface.co/TheBloke/CodeLlama-7B-Instruct-GGUF/resolve/main/codellama-7b-instruct.Q3_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "codellama-13b-instruct",
+      "name": "CodeLlama 13B Instruct",
+      "family": "Meta",
+      "params": "13B",
+      "bestFor": "Larger code model — complex projects and refactoring",
+      "minRamGb": 8.0,
+      "recommendedRamGb": 10.0,
+      "thinkingTrained": false,
+      "benchmarkNote": "~5 tok/s on 12GB device",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 7.87, "ramRequiredGb": 9.3,  "downloadUrl": "https://huggingface.co/TheBloke/CodeLlama-13B-Instruct-GGUF/resolve/main/codellama-13b-instruct.Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 5.97, "ramRequiredGb": 7.2,  "downloadUrl": "https://huggingface.co/TheBloke/CodeLlama-13B-Instruct-GGUF/resolve/main/codellama-13b-instruct.Q3_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "tinyllama-1.1b-chat",
+      "name": "TinyLlama 1.1B Chat",
+      "family": "Zhang Peiyuan",
+      "params": "1.1B",
+      "bestFor": "Absolute minimum RAM devices — 1GB+ capable",
+      "minRamGb": 0.9,
+      "recommendedRamGb": 1.1,
+      "thinkingTrained": false,
+      "benchmarkNote": "~40 tok/s on any modern device",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 0.67, "ramRequiredGb": 0.9,  "downloadUrl": "https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/resolve/main/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 0.78, "ramRequiredGb": 1.0,  "downloadUrl": "https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/resolve/main/tinyllama-1.1b-chat-v1.0.Q5_K_M.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 0.45, "ramRequiredGb": 0.7,  "downloadUrl": "https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/resolve/main/tinyllama-1.1b-chat-v1.0.Q2_K.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "zephyr-7b-beta",
+      "name": "Zephyr 7B Beta",
+      "family": "HuggingFace",
+      "params": "7B",
+      "bestFor": "High-quality assistant, strong RLHF alignment",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~12 tok/s on Snapdragon 8 Gen 1",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.37, "ramRequiredGb": 5.1,  "downloadUrl": "https://huggingface.co/TheBloke/zephyr-7B-beta-GGUF/resolve/main/zephyr-7b-beta.Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 5.13, "ramRequiredGb": 5.9,  "downloadUrl": "https://huggingface.co/TheBloke/zephyr-7B-beta-GGUF/resolve/main/zephyr-7b-beta.Q5_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 3.30, "ramRequiredGb": 3.9,  "downloadUrl": "https://huggingface.co/TheBloke/zephyr-7B-beta-GGUF/resolve/main/zephyr-7b-beta.Q3_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "solar-10.7b-instruct",
+      "name": "SOLAR 10.7B Instruct",
+      "family": "Upstage",
+      "params": "10.7B",
+      "bestFor": "Strong alignment — writing, analysis, instruction following",
+      "minRamGb": 6.5,
+      "recommendedRamGb": 8.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~7 tok/s on 12GB device",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 6.46, "ramRequiredGb": 7.7,  "downloadUrl": "https://huggingface.co/TheBloke/SOLAR-10.7B-Instruct-v1.0-GGUF/resolve/main/solar-10.7b-instruct-v1.0.Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 4.90, "ramRequiredGb": 5.9,  "downloadUrl": "https://huggingface.co/TheBloke/SOLAR-10.7B-Instruct-v1.0-GGUF/resolve/main/solar-10.7b-instruct-v1.0.Q3_K_M.gguf", "sha256": "" },
+        { "quant": "Q2_K",   "sizeGb": 3.57, "ramRequiredGb": 4.4,  "downloadUrl": "https://huggingface.co/TheBloke/SOLAR-10.7B-Instruct-v1.0-GGUF/resolve/main/solar-10.7b-instruct-v1.0.Q2_K.gguf",   "sha256": "" }
+      ]
+    },
+    {
+      "id": "vicuna-7b-v1.5",
+      "name": "Vicuna 7B v1.5",
+      "family": "LMSYS",
+      "params": "7B",
+      "bestFor": "Conversational, question answering, explanations",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~12 tok/s on Snapdragon 8 Gen 1",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.37, "ramRequiredGb": 5.1,  "downloadUrl": "https://huggingface.co/TheBloke/vicuna-7B-v1.5-GGUF/resolve/main/vicuna-7b-v1.5.Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 5.13, "ramRequiredGb": 5.9,  "downloadUrl": "https://huggingface.co/TheBloke/vicuna-7B-v1.5-GGUF/resolve/main/vicuna-7b-v1.5.Q5_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "nous-hermes-2-mistral-7b-dpo",
+      "name": "Nous Hermes 2 Mistral 7B DPO",
+      "family": "NousResearch",
+      "params": "7B",
+      "bestFor": "Instruction + roleplay + JSON output + tool use",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~12 tok/s on Snapdragon 8 Gen 1",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.37, "ramRequiredGb": 5.1,  "downloadUrl": "https://huggingface.co/TheBloke/Nous-Hermes-2-Mistral-7B-DPO-GGUF/resolve/main/Nous-Hermes-2-Mistral-7B-DPO.Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 5.13, "ramRequiredGb": 5.9,  "downloadUrl": "https://huggingface.co/TheBloke/Nous-Hermes-2-Mistral-7B-DPO-GGUF/resolve/main/Nous-Hermes-2-Mistral-7B-DPO.Q5_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "yi-1.5-6b-chat",
+      "name": "Yi 1.5 6B Chat",
+      "family": "01.AI",
+      "params": "6B",
+      "bestFor": "Strong multilingual — EN/ZH, writing, summarisation",
+      "minRamGb": 4.0,
+      "recommendedRamGb": 5.0,
+      "thinkingTrained": false,
+      "benchmarkNote": "~13 tok/s on Snapdragon 8 Gen 1",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 3.64, "ramRequiredGb": 4.4,  "downloadUrl": "https://huggingface.co/bartowski/Yi-1.5-6B-Chat-GGUF/resolve/main/Yi-1.5-6B-Chat-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q5_K_M", "sizeGb": 4.27, "ramRequiredGb": 5.0,  "downloadUrl": "https://huggingface.co/bartowski/Yi-1.5-6B-Chat-GGUF/resolve/main/Yi-1.5-6B-Chat-Q5_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 2.76, "ramRequiredGb": 3.4,  "downloadUrl": "https://huggingface.co/bartowski/Yi-1.5-6B-Chat-GGUF/resolve/main/Yi-1.5-6B-Chat-Q3_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "yi-1.5-9b-chat",
+      "name": "Yi 1.5 9B Chat",
+      "family": "01.AI",
+      "params": "9B",
+      "bestFor": "Long context, multilingual, strong reasoning",
+      "minRamGb": 5.5,
+      "recommendedRamGb": 7.0,
+      "thinkingTrained": false,
+      "benchmarkNote": "~9 tok/s on Snapdragon 8 Gen 2",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 5.37, "ramRequiredGb": 6.4,  "downloadUrl": "https://huggingface.co/bartowski/Yi-1.5-9B-Chat-GGUF/resolve/main/Yi-1.5-9B-Chat-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 4.08, "ramRequiredGb": 4.9,  "downloadUrl": "https://huggingface.co/bartowski/Yi-1.5-9B-Chat-GGUF/resolve/main/Yi-1.5-9B-Chat-Q3_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "internlm2.5-7b-chat",
+      "name": "InternLM 2.5 7B Chat",
+      "family": "Shanghai AI Lab",
+      "params": "7B",
+      "bestFor": "Long context, tool use, multilingual, coding",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~11 tok/s on Snapdragon 8 Gen 2",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.73, "ramRequiredGb": 5.5,  "downloadUrl": "https://huggingface.co/bartowski/internlm2_5-7b-chat-GGUF/resolve/main/internlm2_5-7b-chat-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 3.59, "ramRequiredGb": 4.3,  "downloadUrl": "https://huggingface.co/bartowski/internlm2_5-7b-chat-GGUF/resolve/main/internlm2_5-7b-chat-Q3_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "dolphin-2.9.1-llama-3-8b",
+      "name": "Dolphin 2.9.1 Llama 3 8B",
+      "family": "Cognitive Computations",
+      "params": "8B",
+      "bestFor": "Uncensored assistant — creative writing, roleplay",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~11 tok/s on Snapdragon 8 Gen 2",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.92, "ramRequiredGb": 5.7,  "downloadUrl": "https://huggingface.co/bartowski/dolphin-2.9.1-llama-3-8b-GGUF/resolve/main/dolphin-2.9.1-llama-3-8b-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 3.74, "ramRequiredGb": 4.5,  "downloadUrl": "https://huggingface.co/bartowski/dolphin-2.9.1-llama-3-8b-GGUF/resolve/main/dolphin-2.9.1-llama-3-8b-Q3_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "falcon-7b-instruct",
+      "name": "Falcon 7B Instruct",
+      "family": "TII",
+      "params": "7B",
+      "bestFor": "General purpose — trained on large multilingual corpus",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~11 tok/s on Snapdragon 8 Gen 1",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.21, "ramRequiredGb": 5.0,  "downloadUrl": "https://huggingface.co/TheBloke/falcon-7b-instruct-GGUF/resolve/main/falcon-7b-instruct.Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 3.22, "ramRequiredGb": 3.9,  "downloadUrl": "https://huggingface.co/TheBloke/falcon-7b-instruct-GGUF/resolve/main/falcon-7b-instruct.Q3_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "llama-3.2-1b-instruct-thinking",
+      "name": "Llama 3.2 1B Instruct (Thinking Distill)",
+      "family": "Community",
+      "params": "1.5B",
+      "bestFor": "Tiny reasoning model for micro devices",
+      "minRamGb": 1.3,
+      "recommendedRamGb": 1.6,
+      "thinkingTrained": true,
+      "benchmarkNote": "~26 tok/s on Snapdragon 865",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 0.92, "ramRequiredGb": 1.3,  "downloadUrl": "https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-R1-Distill-GGUF/resolve/main/Llama-3.2-1B-Instruct-R1-Distill-Q4_K_M.gguf", "sha256": "" }
+      ]
+    },
+    {
+      "id": "llama-3.1-8b-tulu-3",
+      "name": "Llama 3.1 8B Tulu 3",
+      "family": "Allen AI",
+      "params": "8B",
+      "bestFor": "Strongest open 8B for instruction following tasks",
+      "minRamGb": 4.5,
+      "recommendedRamGb": 5.5,
+      "thinkingTrained": false,
+      "benchmarkNote": "~11 tok/s on Snapdragon 8 Gen 2",
+      "variants": [
+        { "quant": "Q4_K_M", "sizeGb": 4.92, "ramRequiredGb": 5.7,  "downloadUrl": "https://huggingface.co/allenai/Llama-3.1-Tulu-3-8B-GGUF/resolve/main/Llama-3.1-Tulu-3-8B-Q4_K_M.gguf", "sha256": "" },
+        { "quant": "Q3_K_M", "sizeGb": 3.74, "ramRequiredGb": 4.5,  "downloadUrl": "https://huggingface.co/allenai/Llama-3.1-Tulu-3-8B-GGUF/resolve/main/Llama-3.1-Tulu-3-8B-Q3_K_M.gguf", "sha256": "" }
+      ]
+    }
+  ]
+}
