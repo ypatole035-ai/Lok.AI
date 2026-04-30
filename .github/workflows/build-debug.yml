@@ -27,19 +27,13 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
-        with:
-          cmdline-tools-version: latest
-        with:
-          cmdline-tools-version: latest
 
       - name: Install NDK and CMake
         run: |
           sdkmanager --install "ndk;27.0.12077973" "cmake;3.22.1"
           echo "ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/27.0.12077973" >> $GITHUB_ENV
+          echo "ANDROID_NDK=$ANDROID_SDK_ROOT/ndk/27.0.12077973" >> $GITHUB_ENV
 
-      # FIX: Use the Gradle wrapper action instead of manually downloading the jar.
-      # The manual curl approach was downloading from an unreliable GitHub raw URL
-      # and often fetched a corrupt or wrong file, breaking every build.
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
         with:
@@ -66,11 +60,8 @@ jobs:
         run: ./gradlew assembleDebug --no-daemon --max-workers=2
         env:
           GRADLE_OPTS: "-Xmx4g"
-          ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/27.0.12077973
-          ANDROID_NDK: /usr/local/lib/android/sdk/ndk/27.0.12077973
-          ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/27.0.12077973
-          ANDROID_NDK: /usr/local/lib/android/sdk/ndk/27.0.12077973
           ANDROID_NDK_HOME: ${{ env.ANDROID_NDK_HOME }}
+          ANDROID_NDK: ${{ env.ANDROID_NDK }}
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
