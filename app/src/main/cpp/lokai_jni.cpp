@@ -74,7 +74,7 @@ Java_com_lokai_app_data_inference_LlamaEngine_runInference(
         return;
     }
     tokens.resize(n_tokens);
-    llama_kv_cache_clear(g_ctx);
+    llama_kv_cache_seq_rm(g_ctx, -1, -1, -1);
     llama_batch batch = llama_batch_init(512, 0, 1);
     for (int i = 0; i < n_tokens; i++) {
         batch.token[batch.n_tokens]     = tokens[i];
@@ -139,7 +139,7 @@ Java_com_lokai_app_data_inference_LlamaEngine_unloadModel(JNIEnv* env, jobject) 
 extern "C" JNIEXPORT jint JNICALL
 Java_com_lokai_app_data_inference_LlamaEngine_getContextUsed(JNIEnv* env, jobject) {
     if (!g_ctx) return 0;
-    return (jint)llama_kv_self_used_cells(g_ctx);
+    return (jint)llama_kv_cache_used_cells(g_ctx);
 }
 
 extern "C" JNIEXPORT jint JNICALL

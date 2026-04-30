@@ -1,3 +1,4 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
 package com.lokai.app.ui.screens
 
 import android.app.Activity

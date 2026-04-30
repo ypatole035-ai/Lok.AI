@@ -284,6 +284,7 @@ private fun AgentMessageBubble(message: ChatMessage, agentName: String) {
         Column(modifier = Modifier.fillMaxWidth()) {
             if (message.thinkingLog.isNotEmpty()) {
                 ThinkingPanel(
+                    isGenerating = false,
                     logs       = message.thinkingLog,
                     thinkingMs = message.thinkingMs
                 )
