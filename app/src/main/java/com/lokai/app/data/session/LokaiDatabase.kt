@@ -10,7 +10,9 @@ import androidx.room.TypeConverters
     entities = [
         DownloadedModelEntity::class,
         ChatSessionEntity::class,
-        AgentProfileEntity::class
+        AgentProfileEntity::class,
+        FileChunkEntity::class,
+        AgentSessionEntity::class
     ],
     version  = 6,
     exportSchema = false
@@ -21,6 +23,8 @@ abstract class LokaiDatabase : RoomDatabase() {
     abstract fun downloadedModelDao(): DownloadedModelDao
     abstract fun sessionDao(): SessionDao
     abstract fun agentDao(): AgentDao
+    abstract fun chunkDao(): ChunkDao
+    abstract fun agentSessionDao(): AgentSessionDao
 
     companion object {
         @Volatile
