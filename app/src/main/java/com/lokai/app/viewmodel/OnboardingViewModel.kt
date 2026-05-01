@@ -68,10 +68,25 @@ class OnboardingViewModel(application: Application) : AndroidViewModel(applicati
         }
     }
 
-    fun markOnboardingDone() {
+    /**
+     * FIX: onComplete callback is invoked AFTER the DataStore write finishes.
+     *
+     * Previously markOnboardingDone() launched a fire-and-forget coroutine, then
+     * the caller immediately called onFinished() on the next line — disposing the
+     * Activity/Composition and cancelling viewModelScope mid-write, causing a crash.
+     *
+     * Now the caller passes onComplete and navigation only happens once the write
+     * has actually committed to disk.
+     */
+    fun markOnboardingDone(onComplete: () -> Unit) {
         viewModelScope.launch {
-            getApplication<Application>().onboardingDataStore.edit { prefs ->
-                prefs[KEY_ONBOARDING_DONE] = true
+            try {
+                getApplication<Application>().onboardingDataStore.edit { prefs ->
+                    prefs[KEY_ONBOARDING_DONE] = true
+                }
+            } finally {
+                // Always navigate even if write fails — don't leave user stuck on page 2
+                onComplete()
             }
         }
     }
